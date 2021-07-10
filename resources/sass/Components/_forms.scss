@@ -1,0 +1,43 @@
+
+.input_search {
+  position: relative;
+  flex-basis: 40%;
+  flex-shrink: 0;
+  text-align: center;
+  @include respond(phone) {
+    order: 3;
+    margin: 10px auto;
+    flex-basis: 80% !important;
+  }
+  @include respond(port-tab) {
+    flex: 0 0 50%;
+  }
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    border: none;
+    padding: 0.85rem 2rem;
+    background-color: $gray_color_1;
+    border-radius: 2rem;
+    width: 90%;
+    color: $gray_color;
+    transition: all 0.35s;
+    &::-webkit-input-placeholder {
+      color: $gray_color;
+    }
+    &:focus {
+      width: 100%;
+      background-color:rgba($gray_color_1,.75);
+      & ~ .input_search__icon {
+        right: 10px;
+      }
+    }
+  }
+  &__icon {
+    position: absolute;
+    right: 50px;
+    top: 2px;
+    transition: .25s linear;
+  }
+}

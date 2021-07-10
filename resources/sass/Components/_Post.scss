@@ -1,0 +1,116 @@
+.post {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px $gray_color_1;
+  padding: 1.5rem 2rem;
+  min-width: 32.5rem;
+  max-width: 45rem;
+
+  .profile {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 65px auto;
+    grid-gap: 0 20px;
+    justify-content: start;
+    align-items: center;
+
+    .avatar {
+      justify-self: center;
+      grid-row: 1 / 2 span;
+      width: 5rem;
+      height: 5rem;
+
+      img {
+        border-radius: 50rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .username {
+      color: $gray_color;
+      font-weight: bold;
+      grid-column: 2;
+      font-size: 1.5rem;
+    }
+
+    .title_user {
+      color: $gray_color_1;
+      font-size: 1.25rem;
+    }
+  }
+
+  .question-box {
+    .question_title {
+      padding: 1.5rem 0;
+      font-size: 2.25rem;
+      text-overflow: ellipsis;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .question_content {
+      font-size: 1.4rem;
+      text-overflow: ellipsis;
+      width: 100%;
+      overflow: hidden;
+      max-height: 100px;
+    }
+
+    .question_image {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      user-select: none;
+      margin: 1.5rem 0;
+    }
+  }
+
+  .question-indicator {
+    font-size: 1.15rem;
+    width: 100%;
+    overflow: auto;
+    &, & > ul {
+      list-style: none;
+      @include flex(center, start);
+      column-gap: 5px;
+      & > li {
+        border: 1.5px solid $gray_color;
+        border-radius: 5px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        color: $gray_color;
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+
+  .question-actions {
+    color: $gray_color;
+    margin: 1.5rem 0;
+
+    &, & > div {
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+    }
+    & > div {
+      column-gap: .75rem;
+      padding: 1rem;
+      box-shadow: 0 0 10px $gray_color_1;
+      border-radius: 15px;
+      font-weight: bold;
+    }
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}

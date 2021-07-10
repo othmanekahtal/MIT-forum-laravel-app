@@ -1,0 +1,29 @@
+////////////////////////////////////////////////
+///////////// SETTING MEDIA QUERIES:
+// phone:0-600px:37.5em
+// port-tab: 600px-900px :56.25em
+// land-tab:900px-1200px:75em
+// normal-desk: already styling
+// big-desk:+1800px:112.5em
+@mixin respond($breakpoint) {
+  @if ($breakpoint == "phone") {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == "port-tab") {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == "lan-tab") {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == "big-desk") {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

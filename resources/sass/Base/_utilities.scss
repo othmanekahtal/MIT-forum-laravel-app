@@ -1,0 +1,82 @@
+$directions: "T", "B", "L", "R", "X", "Y";
+$props: "Padding", "Margin";
+
+@each $direction in $directions {
+  @for $i from 1 through 10 {
+    @each $prop in $props {
+      @if ($prop== "margin") {
+        .margin-#{$direction}-#{$i} {
+          @if ($direction== "T") {
+            margin-top: $i * 1rem;
+          }
+          @if ($direction== "B") {
+            margin-bottom: $i * 1rem;
+          }
+          @if ($direction== "L") {
+            margin-left: $i * 1rem;
+          }
+          @if ($direction== "R") {
+            margin-right: $i * 1rem;
+          }
+          @if ($direction== "X") {
+            margin: 0 $i * 1rem;
+          }
+          @if ($direction== "Y") {
+            margin: $i * 1rem 0;
+          }
+        }
+      }
+      @if ($prop== "padding") {
+        .Padding-#{$direction}-#{$i} {
+          @if ($direction== "T") {
+            padding-top: $i * 1rem;
+          }
+          @if ($direction== "B") {
+            padding-bottom: $i * 1rem;
+          }
+          @if ($direction== "L") {
+            padding-left: $i * 1rem;
+          }
+          @if ($direction== "R") {
+            padding-right: $i * 1rem;
+          }
+          @if ($direction== "X") {
+            padding: 0 $i * 1rem;
+          }
+          @if ($direction== "Y") {
+            padding: $i * 1rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.svg-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  fill: currentColor;
+ }
+ .hide_menu {
+   overflow: hidden;
+ }
+ .bg--danger {
+   background-color: $red_color !important;
+   color:$white_color !important;
+   &:hover {
+   background-color: $red_color_1 !important;
+
+   background-color: $red_color_1;
+   }
+ }
+ .reset-btn,.reset-link{
+   all: unset;
+ }
+
+ .pointer {
+   cursor: pointer;
+ }
+ .linear_transition {
+   transition:all .25s linear;
+ }

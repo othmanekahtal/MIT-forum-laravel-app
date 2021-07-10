@@ -1,0 +1,28 @@
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  // normal : 1rem = 10px
+  font-size: 62.5%;
+  @include respond(phone) {
+    // for mobile : 1rem  == 7.5px
+    font-size: 45%;
+  }
+  @include respond(port-tab) {
+    // for port-tab: 1rem  == 8.5px
+    font-size: 50.25%;
+  }
+  @include respond(lan-tab) {
+    // for lan-tab :f1rem == 9px
+    font-size: 55%;
+  }
+  @include respond(big-desk) {
+    // for big desktop screen : 1rem == 12px
+    font-size: 70%;
+  }
+}
+body {
+  font-size: 1.75rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
