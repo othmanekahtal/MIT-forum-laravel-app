@@ -1,0 +1,25 @@
+@import "../Abstracts/variables";
+@import "../Abstracts/placeholders";
+@import "../Abstracts/responsive-rules";
+@import "../Abstracts/mixins";
+@import "../Base/base";
+@import "../Base/reset";
+@import "../Base/typography";
+@import "../Base/utilities";
+@import "../Components/forms";
+@import "../Components/Post";
+@import "../Components/btns";
+
+@import "../Layout/navbar";
+@import "../Layout/footer";
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.main-content {
+  padding: 1.5rem 2.5rem;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 15px $gray_color_1;
+}

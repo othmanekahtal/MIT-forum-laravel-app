@@ -1,0 +1,13 @@
+
+button {
+    padding: .75rem 3.2rem;
+    border: none;
+    font-size: inherit;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    background-color:$gray_color_1 ;
+    transition:all .25s linear;
+    &:hover {
+        background-color:darken($gray_color_1,5%);
+    }
+}

@@ -1,0 +1,16 @@
+@import "../Abstracts/variables";
+@import "../Abstracts/placeholders";
+@import "../Abstracts/responsive-rules";
+@import "../Abstracts/mixins";
+@import "../Components/btns";
+@import "../Base/base";
+@import "../Base/utilities";
+@import "../Base/reset";
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.main_content {
+    padding: 1.5rem 2.5rem 5rem;
+}

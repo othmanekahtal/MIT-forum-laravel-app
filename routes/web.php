@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes(['verify'=>true]);
+
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::resource('/dashboard', App\Http\Controllers\DashboardController::class)->middleware(['auth','verified']);
+Route::get('/logout',[App\Http\Controllers\User::class, 'logout'])->name('logout')->middleware(['auth']);
+Route::get('/account',[App\Http\Controllers\User::class, 'account'])->name('account')->middleware(['auth','verified']);

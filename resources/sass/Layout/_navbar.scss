@@ -12,7 +12,7 @@
     // display: inline-block;
     margin-left: auto;
     &:hover {
-    color: rgba($gray_color_1,.75);
+    color: rgba($gray_color,.75);
   }
   }
 
@@ -29,7 +29,7 @@
       transition: .25s linear;
 
       &:hover {
-        background-color: lighten($gray_color_1, 10%);
+        background-color: lighten($gray_color, 35%);
       }
 
       & > a {

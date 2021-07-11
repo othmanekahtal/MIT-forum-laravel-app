@@ -80,3 +80,13 @@ $props: "Padding", "Margin";
  .linear_transition {
    transition:all .25s linear;
  }
+
+.main_content {
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px $gray_color_1;
+    @include flex(center,center,column);row-gap: 1.5rem;
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+}
+

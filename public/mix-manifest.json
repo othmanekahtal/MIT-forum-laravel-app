@@ -1,5 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/register.css": "/css/register.css",
-    "/css/login.css": "/css/login.css"
+    "/js/main.js": "/js/main.js",
+    "/css/upgrade.css": "/css/upgrade.css",
+    "/css/verify.css": "/css/verify.css",
+    "/css/dashboard.css": "/css/dashboard.css",
+    "/css/login_register.css": "/css/login_register.css"
 }
