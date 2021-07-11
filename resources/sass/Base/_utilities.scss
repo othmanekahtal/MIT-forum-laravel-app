@@ -2,91 +2,138 @@ $directions: "T", "B", "L", "R", "X", "Y";
 $props: "Padding", "Margin";
 
 @each $direction in $directions {
-  @for $i from 1 through 10 {
-    @each $prop in $props {
-      @if ($prop== "margin") {
-        .margin-#{$direction}-#{$i} {
-          @if ($direction== "T") {
-            margin-top: $i * 1rem;
-          }
-          @if ($direction== "B") {
-            margin-bottom: $i * 1rem;
-          }
-          @if ($direction== "L") {
-            margin-left: $i * 1rem;
-          }
-          @if ($direction== "R") {
-            margin-right: $i * 1rem;
-          }
-          @if ($direction== "X") {
-            margin: 0 $i * 1rem;
-          }
-          @if ($direction== "Y") {
-            margin: $i * 1rem 0;
-          }
+    @for $i from 1 through 10 {
+        @each $prop in $props {
+            @if ($prop== "margin") {
+                .margin-#{$direction}-#{$i} {
+                    @if ($direction== "T") {
+                        margin-top: $i * 1rem;
+                    }
+                    @if ($direction== "B") {
+                        margin-bottom: $i * 1rem;
+                    }
+                    @if ($direction== "L") {
+                        margin-left: $i * 1rem;
+                    }
+                    @if ($direction== "R") {
+                        margin-right: $i * 1rem;
+                    }
+                    @if ($direction== "X") {
+                        margin: 0 $i * 1rem;
+                    }
+                    @if ($direction== "Y") {
+                        margin: $i * 1rem 0;
+                    }
+                }
+            }
+            @if ($prop== "padding") {
+                .Padding-#{$direction}-#{$i} {
+                    @if ($direction== "T") {
+                        padding-top: $i * 1rem;
+                    }
+                    @if ($direction== "B") {
+                        padding-bottom: $i * 1rem;
+                    }
+                    @if ($direction== "L") {
+                        padding-left: $i * 1rem;
+                    }
+                    @if ($direction== "R") {
+                        padding-right: $i * 1rem;
+                    }
+                    @if ($direction== "X") {
+                        padding: 0 $i * 1rem;
+                    }
+                    @if ($direction== "Y") {
+                        padding: $i * 1rem 0;
+                    }
+                }
+            }
         }
-      }
-      @if ($prop== "padding") {
-        .Padding-#{$direction}-#{$i} {
-          @if ($direction== "T") {
-            padding-top: $i * 1rem;
-          }
-          @if ($direction== "B") {
-            padding-bottom: $i * 1rem;
-          }
-          @if ($direction== "L") {
-            padding-left: $i * 1rem;
-          }
-          @if ($direction== "R") {
-            padding-right: $i * 1rem;
-          }
-          @if ($direction== "X") {
-            padding: 0 $i * 1rem;
-          }
-          @if ($direction== "Y") {
-            padding: $i * 1rem 0;
-          }
-        }
-      }
     }
-  }
 }
 
 
 .svg-icon {
-  width: 3.5rem;
-  height: 3.5rem;
-  fill: currentColor;
- }
- .hide_menu {
-   overflow: hidden;
- }
- .bg--danger {
-   background-color: $red_color !important;
-   color:$white_color !important;
-   &:hover {
-   background-color: $red_color_1 !important;
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: currentColor;
+}
 
-   background-color: $red_color_1;
-   }
- }
- .reset-btn,.reset-link{
-   all: unset;
- }
+.hide_menu {
+    overflow: hidden;
+}
 
- .pointer {
-   cursor: pointer;
- }
- .linear_transition {
-   transition:all .25s linear;
- }
+.bg--danger {
+    background-color: $red_color !important;
+
+    &, & > * {
+        color: $white_color !important;
+    }
+
+    &:hover {
+        background-color: $red_color_1 !important;
+    }
+}
+
+.reset-btn, .reset-link {
+    all: unset;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.linear_transition {
+    transition: all .25s linear;
+}
 
 .main_content {
     margin: auto;
     border-radius: 15px;
     box-shadow: 0 0 15px $gray_color_1;
-    @include flex(center,center,column);row-gap: 1.5rem;
+    @include flex(center, center, column);
+    row-gap: 1.5rem;
     text-align: center;
     padding: 1.5rem 2.5rem;
 }
 
+.white_color {
+    color: white;
+}
+
+input[type='file'] {
+    all: unset;
+}
+
+select {
+    border-radius: 2rem;
+    width: 100%;
+    background-color: $gray_color_1;
+    appearance: none;
+    border: none;
+    padding: .5rem 2rem;
+    margin: 0;
+    //width: 150px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+}
+
+.center {
+    text-align: center;
+}
+.center_element {
+    margin: 0 auto;
+}
+
+.buttons {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message {
+    color: $red_color;
+}

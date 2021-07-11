@@ -52,11 +52,12 @@ body {
 
 .bg--danger {
   background-color: #ED6663 !important;
+}
+.bg--danger, .bg--danger > * {
   color: #fff !important;
 }
 .bg--danger:hover {
   background-color: #FF4B5C !important;
-  background-color: #FF4B5C;
 }
 
 .reset-btn, .reset-link {
@@ -82,6 +83,49 @@ body {
   row-gap: 1.5rem;
   text-align: center;
   padding: 1.5rem 2.5rem;
+}
+
+.white_color {
+  color: white;
+}
+
+input[type=file] {
+  all: unset;
+}
+
+select {
+  border-radius: 2rem;
+  width: 100%;
+  background-color: #dee3e4;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+.center {
+  text-align: center;
+}
+
+.center_element {
+  margin: 0 auto;
+}
+
+.buttons {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-message {
+  color: #ED6663;
 }
 
 .input_search {

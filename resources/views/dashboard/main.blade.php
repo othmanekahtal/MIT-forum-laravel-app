@@ -29,10 +29,10 @@
             </div>
             <ul class="hamburger_menu__menu hide_menu">
                 <li class="menu">
-                    <a href="#">Add Question</a>
+                    <a href="{{route('account')}}">Account</a>
                 </li>
                 <li class="menu">
-                    <a href="{{route('account')}}">Account</a>
+                    <a href="#">Add Question</a>
                 </li>
                 <li class="menu">
                     <a href="#">My Answer</a>

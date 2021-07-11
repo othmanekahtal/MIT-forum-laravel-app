@@ -1,5 +1,7 @@
 {
     "/js/main.js": "/js/main.js",
+    "/js/loading_img.js": "/js/loading_img.js",
+    "/css/profile.css": "/css/profile.css",
     "/css/upgrade.css": "/css/upgrade.css",
     "/css/verify.css": "/css/verify.css",
     "/css/dashboard.css": "/css/dashboard.css",

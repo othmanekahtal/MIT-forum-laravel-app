@@ -58,6 +58,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy91cGdyYWRlLnNjc3M/NTkyZiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEiLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy91cGdyYWRlLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/sass/upgrade.scss\n");
 
+/***/ }),
+
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9wcm9maWxlLnNjc3M/MDMxZSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEiLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9wcm9maWxlLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/sass/profile.scss\n");
+
 /***/ })
 
 /******/ 	});
@@ -146,6 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/main": 0,
+/******/ 			"css/profile": 0,
 /******/ 			"css/upgrade": 0,
 /******/ 			"css/verify": 0,
 /******/ 			"css/dashboard": 0,
@@ -197,11 +208,12 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/js/main.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/login_register.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/dashboard.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/verify.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/upgrade.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/js/main.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/login_register.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/dashboard.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/verify.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/upgrade.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register"], () => (__webpack_require__("./resources/sass/profile.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
