@@ -49,13 +49,17 @@
 </header>
 <div class="account-main">
     <h2 class="center">Account information :</h2>
-    <form method="post" action="{{ route('update_account') }}" class="form-box">
+    <form method="post" action="{{ route('update_account') }}" class="form-box" enctype="multipart/form-data">
         @csrf
-        @method('put')
         <div class="avatar_account center_element">
             <img class="avatar-image" src="{{ asset("images/".$user->image_path)}}" alt="">
             <input type="file" class="avatar-input" name="avatar">
         </div>
+        @error('avatar')
+        <div class="error-message" role="alert">
+            <strong>{{ $message }}</strong>
+        </div>
+        @enderror
         <div class="group-form">
             <label for="username" class="label-form">
                 username :

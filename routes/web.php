@@ -22,4 +22,4 @@ Auth::routes(['verify'=>true]);
 Route::resource('/dashboard', App\Http\Controllers\DashboardController::class)->middleware(['auth','verified']);
 Route::get('/logout',[App\Http\Controllers\User::class, 'logout'])->name('logout')->middleware(['auth']);
 Route::get('/account',[App\Http\Controllers\User::class, 'account'])->name('account')->middleware(['auth','verified']);
-Route::put('/update',[App\Http\Controllers\User::class,'update'])->name('update_account')->middleware('auth','verified');
+Route::post('/update',[App\Http\Controllers\User::class,'update'])->name('update_account')->middleware('auth','verified');
