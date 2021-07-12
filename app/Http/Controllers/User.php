@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User as UserModel;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
@@ -69,6 +70,23 @@ class User extends Controller
             ->update($data);
         return redirect(route('account'));
 
+    }
+
+    public function delete()
+    {
+        $userInformation = $this->getInformation();
+        $data = [
+            'id' => $userInformation->id,
+            'name'=>$userInformation->name,
+            'permission'=>$userInformation->permission,
+            'image_path'=>$userInformation->image_path,
+            'sex'=>$userInformation->sex,
+            'email'=>$userInformation->email,
+            'email_verified_at'=>$userInformation->email_verified_at,
+            'password'=>$userInformation->password
+            ];
+        DB::table('archive_user')->insert($data);
+        DB::table('users')->delete($userInformation->id);
     }
 
     public function getInformation()

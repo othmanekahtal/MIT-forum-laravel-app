@@ -23,3 +23,4 @@ Route::resource('/dashboard', App\Http\Controllers\DashboardController::class)->
 Route::get('/logout',[App\Http\Controllers\User::class, 'logout'])->name('logout')->middleware(['auth']);
 Route::get('/account',[App\Http\Controllers\User::class, 'account'])->name('account')->middleware(['auth','verified']);
 Route::post('/update',[App\Http\Controllers\User::class,'update'])->name('update_account')->middleware('auth','verified');
+Route::get('/delete',[App\Http\Controllers\User::class,'delete'])->name('delete_account')->middleware('auth','verified');

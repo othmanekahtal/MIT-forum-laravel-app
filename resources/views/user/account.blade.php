@@ -122,6 +122,7 @@
             <input type="password" class="input-form" id="password" placeholder="New password confirmation"
                    name="new_password_confirmation">
         </div>
+            <a class="reset-link danger-text pointer" href="{{route('delete_account')}}">I want to delete my account</a>
         <div class="buttons">
             <button type="submit">Update</button>
             <button class="bg--danger"><a class="reset-link white_color" href="{{route('dashboard.index')

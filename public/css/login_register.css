@@ -118,13 +118,12 @@ select {
 }
 
 .buttons {
-  margin-top: 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.error-message {
+.error-message, .danger-text {
   color: #ED6663;
 }
 
