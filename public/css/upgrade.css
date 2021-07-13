@@ -132,6 +132,15 @@ select {
   color: #ED6663;
 }
 
+.username-link {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.color-gray {
+  color: #959ca0;
+}
+
 *,
 *::after,
 *::before {

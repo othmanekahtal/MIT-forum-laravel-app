@@ -136,3 +136,11 @@ select {
 .error-message,.danger-text{
     color: $red_color;
 }
+.username-link {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.color-gray {
+    color: $gray_color;
+}

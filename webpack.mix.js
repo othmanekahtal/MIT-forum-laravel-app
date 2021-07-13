@@ -18,4 +18,5 @@ mix.js('resources/js/main.js', 'public/js')
     .sass('resources/sass/verify.scss', 'public/css')
     .sass('resources/sass/upgrade.scss', 'public/css')
     .sass('resources/sass/profile.scss', 'public/css')
+    .sass('resources/sass/question.scss', 'public/css')
     .sourceMaps();

@@ -40,10 +40,13 @@ body {
   border-radius: 15px;
   margin: 1.5rem 2rem 3.5rem;
   box-shadow:0 0 15px $gray_color_1;
-  align-items: stretch;
   display: flex;
+  align-items: center;
   grid-gap: 0 2rem;
   &::-webkit-scrollbar {
     display: none;
   }
+    &>a {
+        color: unset;
+    }
 }

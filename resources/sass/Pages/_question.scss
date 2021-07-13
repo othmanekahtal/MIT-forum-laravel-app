@@ -1,0 +1,52 @@
+@import "../Abstracts/variables";
+@import "../Abstracts/placeholders";
+@import "../Abstracts/responsive-rules";
+@import "../Abstracts/mixins";
+@import "../Components/btns";
+@import "../Base/base";
+@import "../Base/utilities";
+@import "../Abstracts/mixins";
+.post {
+    display: flex;
+    flex-direction:column ;
+}
+.question-comments {
+    margin: 2.5rem 1.5rem;
+    background-color: rgba($gray_color_1, 25%);
+    border-radius: 1.5rem;
+    padding: 1rem 2rem;
+    @include flex(start, start, column);
+    row-gap: 2rem;
+    height: 100%;
+    overflow: auto;
+    .add-comment {
+        @include flex(center, center);
+        column-gap: 2rem;
+        input[type='text']{
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            border: none;
+            padding: 0.85rem 2rem;
+            background-color: $gray_color_1;
+            border-radius: 2rem;
+            width: 100%;
+            color: black;
+            transition: all .25s linear;
+        }
+    }
+
+    .comment {
+        width: 100%;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        background-color: darken($gray_color_1, 2%);
+        @include flex(start, start, column);
+        row-gap: .5rem;
+    }
+}
+
+.post {
+    margin: 5rem auto;
+    width: 45vw;
+}

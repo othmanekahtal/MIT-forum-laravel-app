@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
-
 use App\Models\User as UserModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -77,14 +75,14 @@ class User extends Controller
         $userInformation = $this->getInformation();
         $data = [
             'id' => $userInformation->id,
-            'name'=>$userInformation->name,
-            'permission'=>$userInformation->permission,
-            'image_path'=>$userInformation->image_path,
-            'sex'=>$userInformation->sex,
-            'email'=>$userInformation->email,
-            'email_verified_at'=>$userInformation->email_verified_at,
-            'password'=>$userInformation->password
-            ];
+            'name' => $userInformation->name,
+            'permission' => $userInformation->permission,
+            'image_path' => $userInformation->image_path,
+            'sex' => $userInformation->sex,
+            'email' => $userInformation->email,
+            'email_verified_at' => $userInformation->email_verified_at,
+            'password' => $userInformation->password
+        ];
         DB::table('archive_user')->insert($data);
         DB::table('users')->delete($userInformation->id);
     }
@@ -93,6 +91,12 @@ class User extends Controller
     {
         return UserModel::find(Auth::id());
     }
+
+    public function user($id)
+    {
+        return view('user.user', ['user' => UserModel::find($id)]);
+    }
+
 }
 
 

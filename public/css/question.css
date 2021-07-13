@@ -141,44 +141,57 @@ select {
   color: #959ca0;
 }
 
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.post {
+  display: flex;
+  flex-direction: column;
 }
 
-body {
-  overflow-y: auto !important;
-  height: unset !important;
-}
-
-.avatar_account {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-}
-.avatar_account .avatar-image {
-  width: 100%;
+.question-comments {
+  margin: 2.5rem 1.5rem;
+  background-color: rgba(222, 227, 228, 0.25);
+  border-radius: 1.5rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  row-gap: 2rem;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50rem;
+  overflow: auto;
 }
-.avatar_account .avatar-input {
-  position: absolute;
-  z-index: 10;
-  opacity: 0;
+.question-comments .add-comment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.question-comments .add-comment input[type=text] {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+  padding: 0.85rem 2rem;
+  background-color: #dee3e4;
+  border-radius: 2rem;
   width: 100%;
-  height: 100%;
-  inset: 0;
+  color: black;
+  transition: all 0.25s linear;
+}
+.question-comments .comment {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #d8dedf;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  row-gap: 0.5rem;
 }
 
-.account-main {
-  margin: 5rem 0;
-  border-radius: 15px;
-  justify-self: center;
-  box-shadow: 0 0 15px #959ca0;
-  padding: 2.5rem 5rem;
+.post {
+  margin: 5rem auto;
+  width: 45vw;
 }

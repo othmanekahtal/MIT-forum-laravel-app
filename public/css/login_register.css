@@ -127,6 +127,15 @@ select {
   color: #ED6663;
 }
 
+.username-link {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.color-gray {
+  color: #959ca0;
+}
+
 .input_search {
   position: relative;
   flex-basis: 40%;

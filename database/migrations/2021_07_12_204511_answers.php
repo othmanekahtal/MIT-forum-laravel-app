@@ -4,26 +4,23 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAnswersTable extends Migration
+class Answers extends Migration
 {
     /**
      * Run the migrations.
-     *+ id: type = int
-    + id_user: type = int (foreign key)
-    + id_question: type = int (foreign key)
-    + content: type = string
-    + image_path: type = string
+     *
      * @return void
      */
     public function up()
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('question_id')->nullable();
-            $table->mediumText('content')->nullable();
-            $table->string('image_path');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('question_id');
+            $table->mediumText('content');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
     }
 

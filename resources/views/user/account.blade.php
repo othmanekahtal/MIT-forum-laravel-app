@@ -29,13 +29,10 @@
             </div>
             <ul class="hamburger_menu__menu hide_menu">
                 <li class="menu">
-                    <a href="{{route('dashboard.index')}}">dashboard</a>
+                    <a href="{{route('dashboard')}}">dashboard</a>
                 </li>
                 <li class="menu">
-                    <a href="#">Add Question</a>
-                </li>
-                <li class="menu">
-                    <a href="#">My Answer</a>
+                    <a href="{{route('add')}}">Add Question</a>
                 </li>
                 <li class="menu">
                     <a href="#">My Question</a>
@@ -52,7 +49,7 @@
     <form method="post" action="{{ route('update_account') }}" class="form-box" enctype="multipart/form-data">
         @csrf
         <div class="avatar_account center_element">
-            <img class="avatar-image" src="{{ asset("images/".$user->image_path)}}" alt="">
+            <img class="avatar-image" src="{{ asset("images/".$user->image_path_user)}}" alt="">
             <input type="file" class="avatar-input" name="avatar">
         </div>
         @error('avatar')
@@ -125,7 +122,7 @@
             <a class="reset-link danger-text pointer" href="{{route('delete_account')}}">I want to delete my account</a>
         <div class="buttons">
             <button type="submit">Update</button>
-            <button class="bg--danger"><a class="reset-link white_color" href="{{route('dashboard.index')
+            <button class="bg--danger"><a class="reset-link white_color" href="{{route('dashboard')
         }}">Cancel</a></button>
         </div>
     </form>
