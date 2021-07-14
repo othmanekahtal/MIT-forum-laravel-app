@@ -1,0 +1,72 @@
+@import "../Abstracts/variables";
+
+.container-user-question {
+    margin: 5rem;
+    display: flex;
+    column-gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+        width: 30vw;
+        padding: 1.5rem 2.5rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 1.5rem $gray_color;
+    }
+
+    & .questions-box {
+        //max-height: 75vh;
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+}
+
+.user-box {
+    display: flex;
+    flex-direction: column;
+
+    .main-info {
+        display: inline-block;
+        text-align: center;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 5px $gray_color;
+        padding: 1.5rem 2.5rem;
+        margin: 0 auto 2.5rem;
+
+        .username {
+            font-weight: bold;
+            font-size: 2.8rem;
+        }
+    }
+
+    img {
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+}
+
+.post {
+    width: 100%;
+    padding: 2.5rem 3.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1.5rem $gray_color;
+    max-height: 50%;
+    //overflow: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    &:not(:last-child){
+        margin-bottom:2.5rem ;
+    }
+    .images {
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+}
+

@@ -6,5 +6,6 @@
     "/css/verify.css": "/css/verify.css",
     "/css/dashboard.css": "/css/dashboard.css",
     "/css/login_register.css": "/css/login_register.css",
+    "/css/user.css": "/css/user.css",
     "/css/question.css": "/css/question.css"
 }

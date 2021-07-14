@@ -30,6 +30,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./resources/sass/user.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/user.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy91c2VyLnNjc3M/MzdjMSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEiLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy91c2VyLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/sass/user.scss\n");
+
+/***/ }),
+
 /***/ "./resources/sass/login_register.scss":
 /*!********************************************!*\
   !*** ./resources/sass/login_register.scss ***!
@@ -171,6 +181,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 			"css/verify": 0,
 /******/ 			"css/dashboard": 0,
 /******/ 			"css/login_register": 0,
+/******/ 			"css/user": 0,
 /******/ 			"css/question": 0
 /******/ 		};
 /******/ 		
@@ -219,13 +230,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/question"], () => (__webpack_require__("./resources/js/main.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/question"], () => (__webpack_require__("./resources/sass/login_register.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/question"], () => (__webpack_require__("./resources/sass/dashboard.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/question"], () => (__webpack_require__("./resources/sass/verify.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/question"], () => (__webpack_require__("./resources/sass/upgrade.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/question"], () => (__webpack_require__("./resources/sass/profile.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/question"], () => (__webpack_require__("./resources/sass/question.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/user","css/question"], () => (__webpack_require__("./resources/js/main.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/user","css/question"], () => (__webpack_require__("./resources/sass/login_register.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/user","css/question"], () => (__webpack_require__("./resources/sass/dashboard.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/user","css/question"], () => (__webpack_require__("./resources/sass/verify.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/user","css/question"], () => (__webpack_require__("./resources/sass/upgrade.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/user","css/question"], () => (__webpack_require__("./resources/sass/profile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/user","css/question"], () => (__webpack_require__("./resources/sass/question.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/profile","css/upgrade","css/verify","css/dashboard","css/login_register","css/user","css/question"], () => (__webpack_require__("./resources/sass/user.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

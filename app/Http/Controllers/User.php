@@ -28,7 +28,7 @@ class User extends Controller
 
     public function Account()
     {
-        $user = $this->getInformation();
+        $user = $this->getInformation(Auth::id());
         return view("user.account", ['user' => $user]);
     }
 
@@ -49,10 +49,10 @@ class User extends Controller
         if ($request->file('avatar')) {
             $request->validate(['avatar' => 'image|mimes:jpg,png,jpeg,gif,svg']);
             $image_name = time() . '-' . $request->username . '.' . $request->avatar->extension();
-            $data['image_path'] = $image_name;
-            if (!($this->getInformation()->image_path === 'user.png')) {
-                if (File::exists(public_path('images/' . $this->getInformation()->image_path))) {
-                    File::delete(public_path('images/' . $this->getInformation()->image_path));
+            $data['image_path_user'] = $image_name;
+            if (!($this->getInformation(Auth::id())->image_path_user === 'user.png')) {
+                if (File::exists(public_path('images/' . $this->getInformation(Auth::id())->image_path_user))) {
+                    File::delete(public_path('images/' . $this->getInformation(Auth::id())->image_path_user));
 //                Storage::delete();
                 }
                 $request->avatar->move(public_path('images'), $image_name);
@@ -64,20 +64,23 @@ class User extends Controller
         ]);
         $data['sex'] = $request->sex;
         $data['name'] = $request->username;
-        UserModel::where('id', $this->getInformation()->id)
+        UserModel::where('id', $this->getInformation(Auth::id())->id)
             ->update($data);
         return redirect(route('account'));
 
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $userInformation = $this->getInformation();
+        $userInformation = $this->getInformation($id);
+        if(!$userInformation){
+            return redirect('/');
+        }
         $data = [
             'id' => $userInformation->id,
             'name' => $userInformation->name,
             'permission' => $userInformation->permission,
-            'image_path' => $userInformation->image_path,
+            'image_path_user' => $userInformation->image_path_user,
             'sex' => $userInformation->sex,
             'email' => $userInformation->email,
             'email_verified_at' => $userInformation->email_verified_at,
@@ -85,16 +88,20 @@ class User extends Controller
         ];
         DB::table('archive_user')->insert($data);
         DB::table('users')->delete($userInformation->id);
+        return redirect('/');
     }
 
-    public function getInformation()
+    public function getInformation($id)
     {
-        return UserModel::find(Auth::id());
+        return UserModel::find($id);
     }
 
     public function user($id)
     {
-        return view('user.user', ['user' => UserModel::find($id)]);
+        $user = UserModel::find($id);
+        $permission = $this->getInformation(Auth::id())->permission;
+        $questions = DB::table("questions")->where('user_id','=',$id)->get();
+        return view('user.user', ['user' => $user,"permission"=>$permission,'questions'=>$questions]);
     }
 
 }

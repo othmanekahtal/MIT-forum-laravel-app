@@ -17,7 +17,7 @@ class ArchiveUser extends Migration
             $table->integer('id');
             $table->string('name');
             $table->boolean('permission')->default(0);
-            $table->string('image_path')->default('user.png');
+            $table->string('image_path_user')->default('user.png');
             $table->boolean('sex')->default(1);
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();

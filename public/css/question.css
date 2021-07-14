@@ -141,6 +141,28 @@ select {
   color: #959ca0;
 }
 
+.no-radius {
+  border-radius: unset !important;
+}
+
+textarea {
+  background-color: #dee3e4;
+  resize: vertical;
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 1rem 1.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  height: 10rem;
+}
+
+.Fixed-FOOTER {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+}
+
 .post {
   display: flex;
   flex-direction: column;

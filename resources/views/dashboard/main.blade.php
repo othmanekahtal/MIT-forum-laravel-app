@@ -35,7 +35,7 @@
                     <a href="{{route('add')}}">Add Question</a>
                 </li>
                 <li class="menu">
-                    <a href="#">My Question</a>
+                    <a href="{{'/questions/'.Auth::id()}}">My Question</a>
                 </li>
                 <li class="menu bg--danger">
                     <a href="{{route('logout')}}">Log out</a>
@@ -56,8 +56,9 @@
     </ul>
 </header>
 <div class="main">
+{{--    {{dd($questions)}}--}}
     @foreach($questions as $question)
-        <a class="reset-link post pointer" href="{{'question/'.$question->id}}">
+        <a class="reset-link post pointer" href="{{'question/'.$question->id_question}}">
             <div class="profile">
                 <div class="avatar">
                     <img
@@ -80,7 +81,7 @@
                     {{$question->content}}
                 </p>
                 @if($question->image_path_question)
-                    <img class="question_image" src="{{$question->image_path_question}}"
+                    <img class="question_image" src="{{asset('images/'.$question->image_path_question)}}"
                          alt="question-image">
                 @endif
                 <div class="question-indicator">

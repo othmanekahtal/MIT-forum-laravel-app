@@ -144,3 +144,23 @@ select {
 .color-gray {
     color: $gray_color;
 }
+
+.no-radius {
+    border-radius:unset !important;
+}
+textarea {
+    background-color: $gray_color_1;
+    resize: vertical;
+    width: 100%;
+    border-radius: 1.5rem;
+    padding: 1rem 1.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    height: 10rem;
+}
+.Fixed-FOOTER {
+    position: absolute;
+    width: 100%;
+    inset: 0;
+}

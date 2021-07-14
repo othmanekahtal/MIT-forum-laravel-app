@@ -36,7 +36,7 @@
                     <a href="{{route('add')}}">Add Question</a>
                 </li>
                 <li class="menu">
-                    <a href="#">My Question</a>
+                    <a href="{{'/questions/'.Auth::id()}}">My Question</a>
                 </li>
                 <li class="menu bg--danger">
                     <a href="{{route('logout')}}">Log out</a>
@@ -81,7 +81,7 @@
             {{$question->content}}
         </p>
         @if($question->image_path_question)
-            <img class="question_image" src="{{$question->image_path_question}}"
+            <img class="question_image" src="{{asset('images/'.$question->image_path_question)}}"
                  alt="question-image">
         @endif
         <div class="question-indicator">
@@ -111,14 +111,17 @@
             <input type="text" placeholder="add your answer" name="answer" required>
             <button type="submit">add</button>
         </form>
-        @foreach($comments as $comment)
-            <div class="comment">
-
-                <a class="username username-link color-gray" href="{{'/user/'.$comment->id}}"
-                   class="comment-profile">{{$comment->name}}</a>
-                <div class="comment-content">{{$comment->content}}</div>
-            </div>
-        @endforeach
+        @if(count($comments))
+            @foreach($comments as $comment)
+                <div class="comment">
+                    <a class="username username-link color-gray" href="{{'/user/'.$comment->id}}"
+                       class="comment-profile">{{$comment->name}}</a>
+                    <div class="comment-content">{{$comment->content}}</div>
+                </div>
+            @endforeach
+        @else
+            <div class="color-gray">No Comments!</div>
+        @endif
     </div>
 </div>
 <div class="footer">
