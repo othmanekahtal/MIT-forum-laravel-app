@@ -64,7 +64,7 @@ class Questions extends Controller
     {
         $questions = DB::table('questions')
             ->join('users', 'questions.user_id', '=', 'users.id')
-            ->select('*','questions.id as id_question')->get();
+            ->select('*', 'questions.id as id_question')->get();
 //        $questions = DB::table('questions')->get();
         return view('dashboard.main', ['questions' => $questions]);
     }
@@ -72,7 +72,7 @@ class Questions extends Controller
     public function question($id)
     {
         $question = DB::table('questions')->find($id);
-        $userPublisher = DB::table('users')->find($question->user_id,['name','id','permission','image_path_user']);
+        $userPublisher = DB::table('users')->find($question->user_id, ['name', 'id', 'permission', 'image_path_user']);
         $questionComments = DB::table('answers')->join('users', 'answers.user_id', '=', 'users.id')->where
         ('question_id', '=', $id)
             ->get(['answers.content', 'users.name', 'users.id']);
@@ -83,20 +83,23 @@ class Questions extends Controller
             'comments' => $questionComments
         ]);
     }
+
     public function deleteQuestion($id): \Illuminate\Http\RedirectResponse
     {
-        $question = DB::table('questions')->find($id);
-        DB::table('archive_question')->insert([
-            'id'=>$question->id,
-            'title'=>$question->title,
-            'image_path_question'=>$question->image_path_question,
-            'content'=>$question->content,
-            'user_id'=>$question->user_id,
-            'tag'=>$question->tag,
-            'category'=>$question->category,
-            'created_at'=>$question->created_at
-        ]);
-        DB::table('questions')->delete($id);
+        if (Auth::id() == $id || Auth::user()->permission) {
+            $question = DB::table('questions')->find($id);
+            DB::table('archive_question')->insert([
+                'id' => $question->id,
+                'title' => $question->title,
+                'image_path_question' => $question->image_path_question,
+                'content' => $question->content,
+                'user_id' => $question->user_id,
+                'tag' => $question->tag,
+                'category' => $question->category,
+                'created_at' => $question->created_at
+            ]);
+            DB::table('questions')->delete($id);
+        }
         return back();
     }
 }

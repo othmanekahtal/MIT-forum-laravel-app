@@ -97,10 +97,11 @@ class User extends Controller
 
     public function user($id)
     {
-        $user = UserModel::find($id);
-        $permission = $this->getInformation(Auth::id())->permission;
+        $user = $this->getInformation($id);
+//        $permission = $this->getInformation(Auth::id())->permission;
         $questions = DB::table("questions")->where('user_id', '=', $id)->get();
-        return view('user.user', ['user' => $user, "permission" => $permission, 'questions' => $questions]);
+        return view('user.user', ['user' => $user, "permission" => Auth::user()->permission, 'questions' =>
+            $questions]);
     }
 
 }
