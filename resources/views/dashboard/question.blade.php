@@ -32,6 +32,12 @@
                 <li class="menu">
                     <a href="{{route('account')}}">Account</a>
                 </li>
+                @if(Auth::user()->permission)
+                    <li class="menu">
+                        <a href="/admin/">All users</a>
+                    </li>
+                @endif
+
                 <li class="menu">
                     <a href="{{route('add')}}">Add Question</a>
                 </li>

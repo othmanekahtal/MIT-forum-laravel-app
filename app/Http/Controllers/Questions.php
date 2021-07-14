@@ -85,7 +85,7 @@ class Questions extends Controller
     }
     public function deleteQuestion($id): \Illuminate\Http\RedirectResponse
     {
-        $question = DB::table('question')->find($id);
+        $question = DB::table('questions')->find($id);
         DB::table('archive_question')->insert([
             'id'=>$question->id,
             'title'=>$question->title,
@@ -96,6 +96,7 @@ class Questions extends Controller
             'category'=>$question->category,
             'created_at'=>$question->created_at
         ]);
+        DB::table('questions')->delete($id);
         return back();
     }
 }

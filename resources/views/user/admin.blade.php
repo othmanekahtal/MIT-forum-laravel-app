@@ -53,45 +53,41 @@
         </div>
     </nav>
 </header>
-<div class="container-user-question">
-    <div class="user-box">
-        <div class="main-info">
-            <div class="username">
-                {{$user->name}}
-            </div>
-            <div class="user-image">
-                <img src="{{asset('images/'.$user->image_path_user)}}" alt="image user">
-            </div>
-        </div>
-        <div class="email">email : {{$user->email}}</div>
-        <div class="email">gender : {{$user->sex ? 'male':'female'}}</div>
-        <div class="permission">permission : {{$user->permission?'Admin':'User'}}</div>
-        <div class="since">created at : {{$user->created_at}}</div>
-        @if($permission)
-            <div class="deactivate-account"><a class="reset-link danger-text" href="/delete/{{$user->id}}">deactivate
-                    account</a></div>
-        @endif
-    </div>
-    <div class="questions-box">
-        @foreach($questions as $question)
-            <div class="post">
-                <h2 class="title">
-                    <a class="reset-link color-gray pointer" href="/question/{{$question->id}}">
-                        {{$question->title}}
-                    </a>
-                </h2>
-                <div class="images">
-                    <img src="{{asset('images/'.$question->image_path_question)}}" alt="">
-                </div>
-                <div class="content">
-                    {{$question->content}}
-                </div>
-                @if($permission)
-                    <a href="/question_delete/{{$question->id}}" class="reset-link pointer danger-text">delete</a>
+<div class="users-content">
+    <h1 class="center">Users :</h1>
+    <div class="users">
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>username</th>
+                <th>email</th>
+                <th>permission</th>
+                <th>sex</th>
+                <th>created_at</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($users as $user)
+                @if($user->id != Auth::id())
+                    <tr>
+                        <th>{{$user->id}}</th>
+                        <th>{{$user->name}}</th>
+                        <th>{{$user->email}}</th>
+                        <th>{{$user->permission ? 'admin':'user'}}</th>
+                        <th>{{$user->sex ? 'male':'female'}}</th>
+                        <th>{{$user->created_at}}</th>
+                        <th class="links-table">
+                            <a href='/user/{{$user->id}}' class="reset-link color-gray pointer">Show</a>
+                            <a href="/delete/{{$user->id}}" class="danger-text reset-link pointer">delete</a>
+                        </th>
+                    </tr>
                 @endif
-            </div>
-        @endforeach
-        {{--        {{print_r($questions)}}--}}
+            @endforeach
+            <!-- and so on... -->
+            </tbody>
+        </table>
     </div>
 </div>
 <div class="footer">

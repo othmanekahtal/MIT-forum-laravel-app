@@ -163,6 +163,50 @@ textarea {
   inset: 0;
 }
 
+.styled-table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+  background-color: #015496;
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+}
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #015496;
+}
+
+.users {
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+.users table {
+  display: inline-block;
+}
+
+.links-table {
+  display: flex;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.links-table > a {
+  display: block;
+}
+
 .post {
   display: flex;
   flex-direction: column;

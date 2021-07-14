@@ -73,22 +73,21 @@ class User extends Controller
     public function delete($id)
     {
         $userInformation = $this->getInformation($id);
-        if(!$userInformation){
-            return redirect('/');
+        if (Auth::id() == $id || Auth::user()->permission) {
+            $data = [
+                'id' => $userInformation->id,
+                'name' => $userInformation->name,
+                'permission' => $userInformation->permission,
+                'image_path_user' => $userInformation->image_path_user,
+                'sex' => $userInformation->sex,
+                'email' => $userInformation->email,
+                'email_verified_at' => $userInformation->email_verified_at,
+                'password' => $userInformation->password
+            ];
+            DB::table('archive_user')->insert($data);
+            DB::table('users')->delete($userInformation->id);
         }
-        $data = [
-            'id' => $userInformation->id,
-            'name' => $userInformation->name,
-            'permission' => $userInformation->permission,
-            'image_path_user' => $userInformation->image_path_user,
-            'sex' => $userInformation->sex,
-            'email' => $userInformation->email,
-            'email_verified_at' => $userInformation->email_verified_at,
-            'password' => $userInformation->password
-        ];
-        DB::table('archive_user')->insert($data);
-        DB::table('users')->delete($userInformation->id);
-        return redirect('/');
+        return back();
     }
 
     public function getInformation($id)
@@ -100,8 +99,8 @@ class User extends Controller
     {
         $user = UserModel::find($id);
         $permission = $this->getInformation(Auth::id())->permission;
-        $questions = DB::table("questions")->where('user_id','=',$id)->get();
-        return view('user.user', ['user' => $user,"permission"=>$permission,'questions'=>$questions]);
+        $questions = DB::table("questions")->where('user_id', '=', $id)->get();
+        return view('user.user', ['user' => $user, "permission" => $permission, 'questions' => $questions]);
     }
 
 }
